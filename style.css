@@ -1,0 +1,16 @@
+body {
+    background-image: url("./image/carbon_fibre.png");
+}
+
+.navbar {
+    margin-bottom: 5%;
+    justify-content: space-around;
+}
+
+.jumbotron {
+    padding: 3%;
+}
+
+.checkbox {
+    margin: 3%;
+}
