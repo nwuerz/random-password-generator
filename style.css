@@ -1,5 +1,6 @@
 body {
-    background-image: url("./image/carbon_fibre.png");
+    background-image: url("./image/cork-board.png");
+    font-family: 'Permanent Marker', cursive;
 }
 
 .navbar {
@@ -9,6 +10,7 @@ body {
 
 .jumbotron {
     padding: 3%;
+    background-image: url("./image/linedpaper.png");
 }
 
 .checkbox {
