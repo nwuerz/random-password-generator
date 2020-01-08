@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Random Password Generator</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
     <script src="generate.js"></script>
@@ -30,7 +30,7 @@
 
                     <div class="row">
 
-                        <h6 class="col-md-6">password length</h6>
+                        <h6 class="col-md-6">input password length</h6>
                         <h6 class="col-md-6">optional characters</h6>
 
                     </div>
@@ -39,21 +39,15 @@
 
                         <div class="col-md-6">
 
-                            <div class="dropdown">
-
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  (between 8 & 128 characters) 
-                                </button>
-
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                  <a class="dropdown-item" href="#">Action</a>
-                                  <a class="dropdown-item" href="#">Another action</a>
-                                  <a class="dropdown-item" href="#">Something else here</a>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">(8 - 128)</span>
                                 </div>
-
+                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-default">
                             </div>
 
-                        </div>    
+                        </div>
 
                         <div class="col-md-6">
 
@@ -61,36 +55,40 @@
 
                                 <div class="col-md-6">
 
-                                    <input class="checkbox" type="checkbox" checked data-toggle="toggle" data-size="normal" style="float: left;">
+                                    <input id = "chkUppercase" class="checkbox" type="checkbox" checked data-toggle="toggle"
+                                        data-size="normal" style="float: left;">
                                     <p>uppercase</p>
-                                    
+
                                 </div>
 
                                 <div class="col-md-6">
-                                   
-                                    <input class="checkbox" type="checkbox" checked data-toggle="toggle" data-size="normal" style="float: left;">
+
+                                    <input id = "chkLowercase" class="checkbox" type="checkbox" checked data-toggle="toggle"
+                                        data-size="normal" style="float: left;">
                                     <p>lowercase</p>
                                 </div>
 
                             </div>
 
                             <div class="row">
-                                
+
                                 <div class="col-md-6">
 
-                                    <input class="checkbox" type="checkbox" checked data-toggle="toggle" data-size="normal" style="float: left;">
+                                    <input id = "chkNumbers" class="checkbox" type="checkbox" checked data-toggle="toggle"
+                                        data-size="normal" style="float: left;">
                                     <p>numbers</p>
                                 </div>
 
                                 <div class="col-md-6">
 
-                                    <input class="checkbox" type="checkbox" checked data-toggle="toggle" data-size="normal" style="float: left;">
+                                    <input id = "chkSymbols" class="checkbox" type="checkbox" checked data-toggle="toggle"
+                                        data-size="normal" style="float: left;">
                                     <p>symbols</p>
                                 </div>
 
                             </div>
-                    
-                        </div>    
+
+                        </div>
 
                     </div>
 
@@ -103,9 +101,9 @@
                     <div class="row">
 
                         <div class="col-md-12">
-                        
+
                             <div class="alert alert-dark" role="alert">
-                            asdf32a1sdf3a1sdf54asd654fas3df1
+                                asdf32a1sdf3a1sdf54asd654fas3df1
                             </div>
 
                         </div>
@@ -122,13 +120,13 @@
 
                         <div class="col-md-7">
 
-                            <button type="button" class="btn btn-danger">generate password</button>
+                            <button onclick="generatePassword()" type="button" class="btn btn-danger">generate password</button>
 
                         </div>
 
                         <div class="col-md-4">
 
-                            <button type="button" class="btn btn-warning">copy to clipboard</button>
+                            <button onclick="copyPassword()"  type="button" class="btn btn-warning">copy to clipboard</button>
 
                         </div>
 
