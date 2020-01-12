@@ -40,16 +40,39 @@ var upperSym = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
  var includeNumber = document.querySelector("#chkNumbers");
  var includeSpecial = document.querySelector("#chkSymbols");
 
- //make a series of if/then statements for the various scenarios
- 
+ //listen for button activity..
+
+ //generate password button clicked
+generate.addEventListener("click", function(event) {
+     event.preventDefault();
+     console.log(passwordLength.value);
+ })
+//copy to clipboard button clicked
+copy.addEventListener("click", function(event) {
+    event.preventDefault();
+    console.log(passwordLength.value);
+//lowercase button checked
+includeLower.addEventListener("click", function() {
+    console.log(includeLower.checked);
+})
+//uppercase button checked
+includeUpper.addEventListener("click", function() {
+    console.log(includeUpper.checked);
+})
+//numbers button checked
+includeNumber.addEventListener("click", function() {
+    console.log(includeNumber.checked);
+})
+//symbols button checked
+includeSpecial.addEventListener("click", function() {
+    console.log(includeSpecial.checked);
+})
 
 
 
+//make a series of if/then statements for the various scenarios
 
-
- if (passwordLength >= 8 && passwordLength <=128) {
-
-if (includeLower === true) {
+if (includeLower.checked === true && generate.) {
     chooseRandom(lower);
     alert("your password is " + randomSelection);
 }
@@ -109,12 +132,8 @@ else if (includeSpecial === true && includeLower === true) {
 else if (includeSpecial === true && includeUpper === true) {
     alert("");
 }
-}
 
-else {
-    alert("please select a number between 8 and 128");
-    var passwordLength = prompt("Please select a password length between 8 and 128!");
-}
+
 //choose a random letter in that the string 
 
 function chooseRandom(string) {
