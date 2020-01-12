@@ -32,44 +32,45 @@ var upperSym = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 
 // retreive info from user needed to generate password
 
+ var passwordLength = document.querySelector("#pwlength");
+ var generate = document.querySelector("#gbutton");
+ var copy = document.querySelector("#cbutton");
+ var includeLower = document.querySelector("#chkLowercase");
+ var includeUpper = document.querySelector("#chkUppercase");
+ var includeNumber = document.querySelector("#chkNumbers");
+ var includeSpecial = document.querySelector("#chkSymbols");
+
+ //make a series of if/then statements for the various scenarios
+ 
 
 
- var passwordLength = prompt("Please select a password length between 8 and 128!");
+
+
 
  if (passwordLength >= 8 && passwordLength <=128) {
 
-     var includeLower = confirm("would you like to include lowercase letters?");
-     var includeUpper = confirm("would you like to inlcude uppercase letters?");
-     var includeNumber = confirm("would you like to include numbers?");
-     var includeSpecial = confirm("would you like to include special characters?");
-
-}
-
-else {
-    alert("please select a number between 8 and 128");
-    var passwordLength = prompt("Please select a password length between 8 and 128!");
-}
-
-//make a series of if/then statements for the various scenarios
-
 if (includeLower === true) {
     chooseRandom(lower);
-    alert("your passord is " + randomSelection);
+    alert("your password is " + randomSelection);
 }
 
 else if (includeUpper === true) {
-    alert(" ");
+    chooseRandom(upper);
+    alert("your password is " + randomSelection);
 }
 
 else if (includeNumber === true) {
+    chooseRandom(num);
     alert(" ");
 }
 
 else if (includeSpecial === true) {
+    chooseRandom(sym);
     alert(" ");
 }
 
 else if (includeLower === true && includeUpper === true) {
+    chooseRandom(lowerUpper);
     alert("");
 }
 
@@ -108,21 +109,31 @@ else if (includeSpecial === true && includeLower === true) {
 else if (includeSpecial === true && includeUpper === true) {
     alert("");
 }
+}
 
-
+else {
+    alert("please select a number between 8 and 128");
+    var passwordLength = prompt("Please select a password length between 8 and 128!");
+}
 //choose a random letter in that the string 
 
 function chooseRandom(string) {
+
+        randomSelection = string.charAt(Math.floor(Math.random() * string.length));
     
-    for (var i = 0; i < passwordLength.length; i++) {
-
-      randomSelection = string.charAt(Math.floor(Math.random() * string.length));
-
-    }
 }
 
-//keep choosing a random letter for the amount of times that the user requested and concatenate them into a string
 
+for (var i = 0; i < passwordLength; i++) {
+    chooseRandom(all);
+    console.log(randomSelection);
+}
+
+
+//keep choosing a random letter for the amount of times that the user requested and concatenate them into a string
+// for (var i = 0; i < passwordLength; i++) {
+//     string.charAt(Math.floor(Math.random() * string.length));
+// }
 
 
 
@@ -130,7 +141,7 @@ function chooseRandom(string) {
 
 // function generatePassword() {
 
-//     for (var i = 0; i < passwordLength.length; i++) {
+//     for (var i = 0; i < passwordLength; i++) {
 
 //         password = randomSelection * passwordLength;
 //     }
