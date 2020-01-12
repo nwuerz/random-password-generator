@@ -46,93 +46,110 @@ var upperSym = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 generate.addEventListener("click", function(event) {
      event.preventDefault();
      console.log(passwordLength.value);
+     makePassword();
  })
 //copy to clipboard button clicked
 copy.addEventListener("click", function(event) {
     event.preventDefault();
     console.log(passwordLength.value);
+})
 //lowercase button checked
 includeLower.addEventListener("click", function() {
     console.log(includeLower.checked);
+    chooseRandom(lower);
+    console.log(randomSelection);
 })
 //uppercase button checked
 includeUpper.addEventListener("click", function() {
     console.log(includeUpper.checked);
+    chooseRandom(upper);
+    console.log(randomSelection);
 })
 //numbers button checked
 includeNumber.addEventListener("click", function() {
     console.log(includeNumber.checked);
+    chooseRandom(num);
+    console.log(randomSelection);
 })
 //symbols button checked
 includeSpecial.addEventListener("click", function() {
     console.log(includeSpecial.checked);
+    chooseRandom(sym);
+    console.log(randomSelection);
 })
 
+
+if (includeSpecial.clicked == true) {
+    chooseRandom(sym);
+    alert(randomSelection);
+}
 
 
 //make a series of if/then statements for the various scenarios
 
-if (includeLower.checked === true && generate.) {
-    chooseRandom(lower);
-    alert("your password is " + randomSelection);
+function makePassword() {
+    
+    if (includeLower.checked == true) {
+            chooseRandom(lower);
+            alert("your password is " + randomSelection);
+        }
+  
+    else if (includeUpper.checked == true) {
+            chooseRandom(upper);
+            alert("your password is " + randomSelection);
 }
-
-else if (includeUpper === true) {
-    chooseRandom(upper);
-    alert("your password is " + randomSelection);
+ 
+    else if (includeNumber.checked == true) {
+            chooseRandom(num);
+            alert("your password is " + randomSelection);
 }
+ 
+// else if (includeSpecial === true) {
+//     chooseRandom(sym);
+//     alert(" ");
+// }
+ 
+// else if (includeLower === true && includeUpper === true) {
+//     chooseRandom(lowerUpper);
+//     alert("");
+// }
 
-else if (includeNumber === true) {
-    chooseRandom(num);
-    alert(" ");
-}
+// else if (includeLower === true && includeUpper === true && includeNumber === true) {
+//     alert("");
+// }
 
-else if (includeSpecial === true) {
-    chooseRandom(sym);
-    alert(" ");
-}
+// else if (includeLower === true && includeUpper === true && includeNumber === true && includeSpecial === true ) {
+//     alert("");
+// }
 
-else if (includeLower === true && includeUpper === true) {
-    chooseRandom(lowerUpper);
-    alert("");
-}
+// else if (includeUpper === true && includeNumber === true) {
+//     alert("");
+// }
 
-else if (includeLower === true && includeUpper === true && includeNumber === true) {
-    alert("");
-}
+// else if (includeUpper === true && includeNumber === true && includeSpecial === true) {
+//     alert("");
+// }
 
-else if (includeLower === true && includeUpper === true && includeNumber === true && includeSpecial === true ) {
-    alert("");
-}
+// else if (includeNumber === true && includeLower === true) {
+//     alert("");
+// }
 
-else if (includeUpper === true && includeNumber === true) {
-    alert("");
-}
+// else if (includeNumber === true && includeLower === true && includeSpecial === true) {
+//     alert("");
+// }
 
-else if (includeUpper === true && includeNumber === true && includeSpecial === true) {
-    alert("");
-}
+// else if (includeSpecial === true && includeNumber === true) {
+//     alert("");
+// }
 
-else if (includeNumber === true && includeLower === true) {
-    alert("");
-}
+// else if (includeSpecial === true && includeLower === true) {
+//     alert("");
+// }
 
-else if (includeNumber === true && includeLower === true && includeSpecial === true) {
-    alert("");
-}
-
-else if (includeSpecial === true && includeNumber === true) {
-    alert("");
-}
-
-else if (includeSpecial === true && includeLower === true) {
-    alert("");
-}
-
-else if (includeSpecial === true && includeUpper === true) {
-    alert("");
-}
-
+// else if (includeSpecial === true && includeUpper === true) {
+//     alert("");
+// }
+} 
 
 //choose a random letter in that the string 
 
