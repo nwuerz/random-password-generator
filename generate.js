@@ -78,85 +78,78 @@ includeSpecial.addEventListener("click", function() {
     console.log(randomSelection);
 })
 
-
-if (includeSpecial.clicked == true) {
-    chooseRandom(sym);
-    alert(randomSelection);
-}
-
-
-//make a series of if/then statements for the various scenarios
+//make a series of if/then statements for the various scenarios in a function
 
 function makePassword() {
     
     if (includeLower.checked == true && includeUpper.checked == false && includeNumber.checked == false && includeSpecial.checked == false) {
             chooseRandom(lower);
-            alert("your password is " + randomSelection);
+            document.getElementById("passwordDisplay").innerHTML=randomSelection;
         }
   
     else if (includeLower.checked == false && includeUpper.checked == true && includeNumber.checked == false && includeSpecial.checked == false) {
             chooseRandom(upper);
-            alert("your password is " + randomSelection);
+            document.getElementById("passwordDisplay").innerHTML=randomSelection;
 }
  
     else if (includeLower.checked == false && includeUpper.checked == false && includeNumber.checked == true && includeSpecial.checked == false) {
             chooseRandom(num);
-            alert("your password is " + randomSelection);
+            document.getElementById("passwordDisplay").innerHTML=randomSelection;
 }
  
     else if (includeLower.checked == false && includeUpper.checked == false && includeNumber.checked == false && includeSpecial.checked == true) {
             chooseRandom(sym);
-            alert("your password is " + randomSelection);
+            document.getElementById("passwordDisplay").innerHTML=randomSelection;
 }
  
     else if (includeLower.checked == true && includeUpper.checked == true && includeNumber.checked == false && includeSpecial.checked == false) {
             chooseRandom(lowerUpper);
-            alert("your password is " + randomSelection);
+            document.getElementById("passwordDisplay").innerHTML=randomSelection;
 }
 
     else if (includeLower.checked == true && includeUpper.checked == true && includeNumber.checked == true && includeSpecial.checked == false) {
             chooseRandom(lowerUpperNum);
-            alert("your password is " + randomSelection);
+            document.getElementById("passwordDisplay").innerHTML=randomSelection;
 }
 
     else if (includeLower.checked == true && includeUpper.checked == true && includeNumber.checked == true && includeSpecial.checked == true) {
             chooseRandom(all);
-            alert("your password is " + randomSelection);
+            document.getElementById("passwordDisplay").innerHTML=randomSelection;
 }
 
     else if (includeLower.checked == false && includeUpper.checked == true && includeNumber.checked == true && includeSpecial.checked == false) {
             chooseRandom(upperNum);
-            alert("your password is " + randomSelection);
+            document.getElementById("passwordDisplay").innerHTML=randomSelection;
 }
 
     else if (includeLower.checked == false && includeUpper.checked == true && includeNumber.checked == true && includeSpecial.checked == true) {
             chooseRandom(upperNumSym);
-            alert("your password is " + randomSelection);
+            document.getElementById("passwordDisplay").innerHTML=randomSelection;
 }
 
     else if (includeLower.checked == true && includeUpper.checked == false && includeNumber.checked == true && includeSpecial.checked == false) {
             chooseRandom(lowerNum);
-            alert("your password is " + randomSelection);
+            document.getElementById("passwordDisplay").innerHTML=randomSelection;
 }
 
     else if (includeLower.checked == true && includeUpper.checked == false && includeNumber.checked == true && includeSpecial.checked == true) {
             chooseRandom(lowerNumSym);
-            alert("your password is " + randomSelection);
+            document.getElementById("passwordDisplay").innerHTML=randomSelection;
 }
 
     else if (includeLower.checked == false && includeUpper.checked == false && includeNumber.checked == true && includeSpecial.checked == true) {
             chooseRandom(numSym);
-            alert("your password is " + randomSelection);
+            document.getElementById("passwordDisplay").innerHTML=randomSelection;
 }
 
     else if (includeLower.checked == true && includeUpper.checked == false && includeNumber.checked == false && includeSpecial.checked == true) {
             chooseRandom(symLower);
-            alert("your password is " + randomSelection);
+            document.getElementById("passwordDisplay").innerHTML=randomSelection;
 }
 
     else if (includeLower.checked == false && includeUpper.checked == true && includeNumber.checked == false && includeSpecial.checked == true) {
             chooseRandom(upperSym);
-            alert("your password is " + randomSelection);
+            document.getElementById("passwordDisplay").innerHTML=randomSelection;
 }
 } 
 
