@@ -87,67 +87,55 @@ function makePassword() {
         }
   
     else if (includeLower.checked == false && includeUpper.checked == true && includeNumber.checked == false && includeSpecial.checked == false) {
-            chooseRandom(upper);
-            document.getElementById("passwordDisplay").innerHTML=randomSelection;
+            generatorOfPasswords(upper)
 }
  
     else if (includeLower.checked == false && includeUpper.checked == false && includeNumber.checked == true && includeSpecial.checked == false) {
-            chooseRandom(num);
-            document.getElementById("passwordDisplay").innerHTML=randomSelection;
+            generatorOfPasswords(num)
 }
  
     else if (includeLower.checked == false && includeUpper.checked == false && includeNumber.checked == false && includeSpecial.checked == true) {
-            chooseRandom(sym);
-            document.getElementById("passwordDisplay").innerHTML=randomSelection;
+            generatorOfPasswords(sym)
 }
  
     else if (includeLower.checked == true && includeUpper.checked == true && includeNumber.checked == false && includeSpecial.checked == false) {
-       generatorOfPasswords(lowerUpper)
+            generatorOfPasswords(lowerUpper)
 }
 
     else if (includeLower.checked == true && includeUpper.checked == true && includeNumber.checked == true && includeSpecial.checked == false) {
-            chooseRandom(lowerUpperNum);
-            document.getElementById("passwordDisplay").innerHTML=randomSelection;
+            generatorOfPasswords(lowerUpperNum)
 }
 
     else if (includeLower.checked == true && includeUpper.checked == true && includeNumber.checked == true && includeSpecial.checked == true) {
-            chooseRandom(all);
-            document.getElementById("passwordDisplay").innerHTML=randomSelection;
+            generatorOfPasswords(all)
 }
 
     else if (includeLower.checked == false && includeUpper.checked == true && includeNumber.checked == true && includeSpecial.checked == false) {
-            chooseRandom(upperNum);
-            document.getElementById("passwordDisplay").innerHTML=randomSelection;
+            generatorOfPasswords(upperNum)
 }
 
     else if (includeLower.checked == false && includeUpper.checked == true && includeNumber.checked == true && includeSpecial.checked == true) {
-            chooseRandom(upperNumSym);
-            document.getElementById("passwordDisplay").innerHTML=randomSelection;
+            generatorOfPasswords(upperNumSym)
 }
 
     else if (includeLower.checked == true && includeUpper.checked == false && includeNumber.checked == true && includeSpecial.checked == false) {
-            chooseRandom(lowerNum);
-            document.getElementById("passwordDisplay").innerHTML=randomSelection;
+            generatorOfPasswords(lowerNum)
 }
 
     else if (includeLower.checked == true && includeUpper.checked == false && includeNumber.checked == true && includeSpecial.checked == true) {
-            chooseRandom(lowerNumSym);
-            document.getElementById("passwordDisplay").innerHTML=randomSelection;
+            generatorOfPasswords(lowerNumSym)
 }
 
     else if (includeLower.checked == false && includeUpper.checked == false && includeNumber.checked == true && includeSpecial.checked == true) {
-            chooseRandom(numSym);
-            document.getElementById("passwordDisplay").innerHTML=randomSelection;
+            generatorOfPasswords(numSym)
 }
 
     else if (includeLower.checked == true && includeUpper.checked == false && includeNumber.checked == false && includeSpecial.checked == true) {
-            chooseRandom(symLower);
-            document.getElementById("passwordDisplay").innerHTML=randomSelection;
+            generatorOfPasswords(symLower)
 }
 
     else if (includeLower.checked == false && includeUpper.checked == true && includeNumber.checked == false && includeSpecial.checked == true) {
-            chooseRandom(upperSym);
-            document.getElementById("passwordDisplay").innerHTML=randomSelection;
+            generatorOfPasswords(upperSym)
 }
 } 
 
@@ -164,12 +152,6 @@ function chooseRandom(string) {
 }
 
 
-for (var i = 0; i < passwordLength; i++) {
-    chooseRandom(all);
-    console.log(randomSelection);
-}
-
-
 function generatorOfPasswords(string){
     var randomArray = [];
     for (let index = 0; index < passwordLength.value; index++) {
@@ -179,21 +161,5 @@ function generatorOfPasswords(string){
     document.getElementById("passwordDisplay").textContent=randomArray.join("");
 }
 
-//keep choosing a random letter for the amount of times that the user requested and concatenate them into a string
-// for (var i = 0; i < passwordLength; i++) {
-//     string.charAt(Math.floor(Math.random() * string.length));
-// }
 
-
-
-
-
-// function generatePassword() {
-
-//     for (var i = 0; i < passwordLength; i++) {
-
-//         password = randomSelection * passwordLength;
-//     }
-    
-// }
 
