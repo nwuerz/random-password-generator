@@ -79,12 +79,13 @@ includeSpecial.addEventListener("click", function() {
 })
 
 //make a series of if/then statements for the various scenarios in a function
-
+    
 function makePassword() {
+    
     
     if (includeLower.checked == true && includeUpper.checked == false && includeNumber.checked == false && includeSpecial.checked == false) {
             generatorOfPasswords(lower)
-        }
+}
   
     else if (includeLower.checked == false && includeUpper.checked == true && includeNumber.checked == false && includeSpecial.checked == false) {
             generatorOfPasswords(upper)
@@ -153,6 +154,11 @@ function chooseRandom(string) {
 
 
 function generatorOfPasswords(string){
+    if (passwordLength.value < 8 || passwordLength.value > 128 || passwordLength.length == "") {
+        alert("please enter a valid #");
+        return;
+    }
+    
     var randomArray = [];
     for (let index = 0; index < passwordLength.value; index++) {
         randomArray.push(chooseRandom(string))
