@@ -83,8 +83,7 @@ includeSpecial.addEventListener("click", function() {
 function makePassword() {
     
     if (includeLower.checked == true && includeUpper.checked == false && includeNumber.checked == false && includeSpecial.checked == false) {
-            chooseRandom(lower);
-            document.getElementById("passwordDisplay").innerHTML=randomSelection;
+            generatorOfPasswords(lower)
         }
   
     else if (includeLower.checked == false && includeUpper.checked == true && includeNumber.checked == false && includeSpecial.checked == false) {
@@ -103,8 +102,7 @@ function makePassword() {
 }
  
     else if (includeLower.checked == true && includeUpper.checked == true && includeNumber.checked == false && includeSpecial.checked == false) {
-            chooseRandom(lowerUpper);
-            document.getElementById("passwordDisplay").innerHTML=randomSelection;
+       generatorOfPasswords(lowerUpper)
 }
 
     else if (includeLower.checked == true && includeUpper.checked == true && includeNumber.checked == true && includeSpecial.checked == false) {
@@ -158,6 +156,10 @@ function makePassword() {
 function chooseRandom(string) {
 
         randomSelection = string.charAt(Math.floor(Math.random() * string.length));
+
+        return randomSelection;
+
+        console.log(randomSelection)
     
 }
 
@@ -167,6 +169,15 @@ for (var i = 0; i < passwordLength; i++) {
     console.log(randomSelection);
 }
 
+
+function generatorOfPasswords(string){
+    var randomArray = [];
+    for (let index = 0; index < passwordLength.value; index++) {
+        randomArray.push(chooseRandom(string))
+    }
+    console.log(randomArray.join(""))
+    document.getElementById("passwordDisplay").textContent=randomArray.join("");
+}
 
 //keep choosing a random letter for the amount of times that the user requested and concatenate them into a string
 // for (var i = 0; i < passwordLength; i++) {
