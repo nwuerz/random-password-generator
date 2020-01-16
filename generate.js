@@ -43,14 +43,12 @@ var upperSym = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
  //listen for button activity..
 
  //generate password button clicked
-generate.addEventListener("click", function(event) {
-     event.preventDefault();
+generate.addEventListener("click", function() {
      console.log(passwordLength.value);
      makePassword();
  })
 //copy to clipboard button clicked
-copy.addEventListener("click", function(event) {
-    event.preventDefault();
+copy.addEventListener("click", function() {
     console.log(passwordLength.value);
 })
 //lowercase button checked
@@ -166,6 +164,3 @@ function generatorOfPasswords(string){
     console.log(randomArray.join(""))
     document.getElementById("passwordDisplay").textContent=randomArray.join("");
 }
-
-
-
