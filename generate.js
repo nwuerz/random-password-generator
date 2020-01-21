@@ -28,6 +28,8 @@ var numSym = "1234567890!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 var symLower = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~abcdefghijklmnopqrstuvwxyz";
 //symbols & uppercase
 var upperSym = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+//upper & lower & symbols
+var upperLowerSym = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 
 
 // retreive info from user needed to generate password
@@ -136,7 +138,10 @@ function makePassword() {
     else if (includeLower.checked == false && includeUpper.checked == true && includeNumber.checked == false && includeSpecial.checked == true) {
             generatorOfPasswords(upperSym)
 }
+    else if (includeLower.checked == true && includeUpper.checked == true && includeNumber.checked == false && includeSpecial.checked == true) {
+            generatorOfPasswords(upperLowerSym)
 } 
+}
 
 //choose a random letter in that the string 
 
