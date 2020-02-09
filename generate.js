@@ -7,7 +7,7 @@ var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 //numbers
 var num = "1234567890";
 //symbols (missing "")
-var sym = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+var sym = '!#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~"';
 //lowercase & uppercase 
 var lowerUpper = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 //lowercase & uppercase & numbers 
@@ -23,11 +23,11 @@ var lowerNum = "abcdefghijklmnopqrstuvwxyz1234567890";
 //numbers & lowercase & symbols 
 var lowerNumSym = "abcdefghijklmnopqrstuvwxyz1234567890!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 //symbols & numbers 
-var numSym = "1234567890!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+var numSym = "1234567890!#$%&'()*+,-\"./:;<=>?@[\\]^_`{|}~";
 //symbols & lowercase
-var symLower = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~abcdefghijklmnopqrstuvwxyz";
+var symLower = "!#$%&'()*+,-./:;<=>?@[\\]^_`\"{|}~abcdefghijklmnopqrstuvwxyz";
 //symbols & uppercase
-var upperSym = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+var upperSym = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&'()\"*+,-./:;<=>?@[\\]^_`{|}~";
 //upper & lower & symbols
 var upperLowerSym = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 
@@ -169,3 +169,12 @@ function generatorOfPasswords(string){
     console.log(randomArray.join(""))
     document.getElementById("passwordDisplay").textContent=randomArray.join("");
 }
+
+copy.addEventListener("click", function() {
+    var input = document.querySelector(".passwordText");
+    input.value = document.getElementById('passwordDisplay').textContent;
+    input.classList.add("passwordCopy");
+    input.select();
+    document.execCommand("copy");
+    input.classList.remove("passwordCopy");
+});

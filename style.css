@@ -16,3 +16,14 @@ body {
 .checkbox {
     margin: 3%;
 }
+
+.passwordText {
+    display: none;
+    position: absolute;
+    left: -3000px;
+}
+
+.passwordCopy {
+    display: block;
+}
+
