@@ -44,11 +44,15 @@ var upperLowerSym = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&'(
 
  //listen for button activity..
 
- //generate password button clicked
+ //generate password when button clicked
 generate.addEventListener("click", function() {
      console.log(passwordLength.value);
      makePassword();
  })
+ //generate password when user presses enter
+ window.addEventListener("keyup", function(e){
+     makePassword();
+ });
 //copy to clipboard button clicked
 copy.addEventListener("click", function() {
     console.log(passwordLength.value);
@@ -177,4 +181,5 @@ copy.addEventListener("click", function() {
     input.select();
     document.execCommand("copy");
     input.classList.remove("passwordCopy");
+    alert("success!");
 });
